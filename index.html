@@ -8,16 +8,21 @@
          var settings = {
            "async": true,
            "crossDomain": true,
-           "url": "https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/health",
+           "url": "http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=439d4b804bc8187953eb36d2a8c26a02",
            "method": "GET"
          }
 
          $.ajax(settings).done(function (response) {
            console.log(response);
+
+           var content = response.wind.speed;
+           $("#windSpeed").append(content);
+
          });
       </script>
    </head>
    <body>
       <h1>Sample Page</h1>
+      <div id="windSpeed">Wind speed: </div>
    </body>
 </html>
